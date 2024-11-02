@@ -9,7 +9,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #FFFFFF; /* Primary White */
     color: #333;
 }
 
@@ -23,9 +23,10 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #800000; /* Siena College Maroon */
-    color: #fff;
+    background-color: #006b54; /* Primary Green */
+    color: #FFFFFF; /* Primary White */
     padding: 20px 0;
+    position: relative;
 }
 
 header .logo {
@@ -46,33 +47,70 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #FFFFFF; /* Primary White */
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ffcc00; /* Siena College Gold */
+    color: #FCC917; /* Primary Yellow */
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #FFFFFF; /* Primary White */
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #006b54; /* Primary Green */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
 }
 
 /* Section Styling */
 section {
     padding: 40px 0;
-    background-color: #fff;
+    background-color: #FFFFFF; /* Primary White */
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 section:nth-of-type(even) {
-    background-color: #f4f4f4;
+    background-color: #CFC9C4; /* Gray */
 }
 
 section h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #800000;
+    color: #006b54; /* Primary Green */
 }
 
 /* Cast Section */
@@ -84,7 +122,7 @@ section h2 {
 }
 
 .cast-member {
-    background-color: #e2e2e2;
+    background-color: #E2E2E2; /* Light Gray */
     padding: 15px;
     border-radius: 5px;
     width: 200px;
@@ -95,7 +133,7 @@ section h2 {
 
 .cast-member:hover {
     transform: scale(1.05);
-    background-color: #d4d4d4;
+    background-color: #D4D4D4; /* Slightly Darker Gray */
 }
 
 .cast-member img {
@@ -106,14 +144,164 @@ section h2 {
 
 .cast-member h3 {
     margin-top: 10px;
-    color: #800000;
+    color: #006b54; /* Primary Green */
 }
 
 .cast-member p {
     font-style: italic;
 }
 
-/* Contact Form */
+/* Schedule Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #006b54; /* Primary Green */
+    color: #FFFFFF; /* Primary White */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #CFC9C4; /* Gray */
+}
+
+tbody tr:hover {
+    background-color: #E2E2E2; /* Light Gray */
+}
+
+/* Gallery Styling */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #FFFFFF; /* Primary White */
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.modal-content h3 {
+    margin-bottom: 10px;
+    color: #006b54; /* Primary Green */
+}
+
+.modal-content p {
+    margin-bottom: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Lightbox Styling */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #FFFFFF; /* Primary White */
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-lightbox:hover,
+.close-lightbox:focus {
+    color: #FCC917; /* Primary Yellow */
+    text-decoration: none;
+}
+
+/* Contact Form Styling */
 #contact-form {
     display: flex;
     flex-direction: column;
@@ -136,42 +324,71 @@ section h2 {
 #contact-form button {
     padding: 10px;
     border: none;
-    background-color: #800000;
-    color: #fff;
+    background-color: #006b54; /* Primary Green */
+    color: #FFFFFF; /* Primary White */
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #contact-form button:hover {
-    background-color: #ffcc00;
-    color: #800000;
+    background-color: #FCC917; /* Primary Yellow */
+    color: #006b54; /* Primary Green */
 }
 
-/* Footer Styling */
-footer {
-    background-color: #800000;
-    color: #fff;
+/* Contact Form Status Messages */
+#form-status {
+    margin-top: 15px;
     text-align: center;
-    padding: 15px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    font-weight: bold;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
+.success {
+    color: green;
+}
 
-    .cast-container {
-        flex-direction: column;
-        align-items: center;
-    }
+.error {
+    color: red;
+}
 
-    .cast-member {
-        width: 80%;
+/* Back to Top Button Styling */
+#back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    background-color: #006b54; /* Primary Green */
+    color: #FFFFFF; /* Primary White */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #FCC917; /* Primary Yellow */
+    color: #006b54; /* Primary Green */
+}
+
+/* Fade-In Animation */
+.container {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
