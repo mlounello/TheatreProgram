@@ -149,6 +149,9 @@ section h2 {
 
 .cast-member p, .creative-member p, .crew-member p {
     font-style: italic;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #555;
 }
 
 /* Schedule Table Styling */
@@ -238,6 +241,7 @@ tbody tr:hover {
 
 .modal-content p {
     margin-bottom: 10px;
+    line-height: 1.4;
 }
 
 .close-button {
