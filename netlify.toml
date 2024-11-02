@@ -6,3 +6,9 @@
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
+
+[[redirects]]
+  from = "/.netlify/identity/*"
+  to = "/.netlify/identity/index.html"
+  status = 200
+  force = true
