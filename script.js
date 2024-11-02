@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const castSection = document.querySelector('#cast .cast-container');
-    const creativeSection = document.querySelector('#whos-who-creative .cast-container');
-    const crewSection = document.querySelector('#whos-who-crew .cast-container');
+    const creativeSection = document.querySelector('#creative .creative-container');
+    const crewSection = document.querySelector('#crew .crew-container');
     const contactForm = document.getElementById('contact-form');
     const modal = document.getElementById('modal');
     const closeButton = document.querySelector('.close-button');
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: "Michael Lounello",
             role: "Production Manager",
             bio: "Michael Lounello (Production Manager) is an experienced Designer & Innovator specializing in immersive experiences, audiovisual solutions, and entertainment design. Based in Albany, NY, he serves as the Production Manager, managing the college's designs and productions. With over a decade in the industry, Mike has built a diverse portfolio, including concerts, TV shows, and corporate events. In addition to his role at Siena, Mike is Co-Vice Chair of Design, Technology, and Management for Region 1 of the Kennedy Center American College Theatre Festival (KCACTF), and serves on the board of Shaker Ridge Country Club. Outside work, Mike is an avid golfer, skier, and boater, and brings a blend of formality and playfulness to all his endeavors.",
-            // Removed image since only cast have images
+            // Removed image since Creative Team won't have headshots
         },
         {
             name: "Orin James",
@@ -342,16 +342,16 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Function to create member cards
-    function createMemberCard(member) {
+    function createMemberCard(member, category) {
         const memberDiv = document.createElement('div');
-        memberDiv.classList.add('cast-member');
+        memberDiv.classList.add(`${category}-member`);
 
         let memberContent = `
             <h3>${member.name}</h3>
             <p>${member.role}</p>
         `;
 
-        if (member.image) {
+        if (member.image && category === 'cast') {
             memberContent = `
                 <img src="${member.image}" alt="${member.name}">
                 <h3>${member.name}</h3>
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
         memberDiv.innerHTML = memberContent;
 
         // Add click event to show modal with bio (only for cast members)
-        if (member.image) {
+        if (member.image && category === 'cast') {
             memberDiv.addEventListener('click', () => {
                 modal.style.display = "flex";
                 modalName.textContent = member.name;
@@ -385,16 +385,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateCast() {
         const sortedCast = sortMembersAlphabetically(cast);
         sortedCast.forEach(member => {
-            const card = createMemberCard(member);
+            const card = createMemberCard(member, 'cast');
             castSection.appendChild(card);
         });
     }
 
-    // Populate Creative Section
+    // Populate Creative Team Section
     function populateCreative() {
         const sortedCreative = sortMembersAlphabetically(creative);
         sortedCreative.forEach(member => {
-            const card = createMemberCard(member);
+            const card = createMemberCard(member, 'creative');
             creativeSection.appendChild(card);
         });
     }
@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateCrew() {
         const sortedCrew = sortMembersAlphabetically(crew);
         sortedCrew.forEach(member => {
-            const card = createMemberCard(member);
+            const card = createMemberCard(member, 'crew');
             crewSection.appendChild(card);
         });
     }
