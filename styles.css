@@ -1,0 +1,177 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #800000; /* Siena College Maroon */
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .logo {
+    width: 150px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00; /* Siena College Gold */
+}
+
+/* Section Styling */
+section {
+    padding: 40px 0;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section:nth-of-type(even) {
+    background-color: #f4f4f4;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #800000;
+}
+
+/* Cast Section */
+.cast-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cast-member {
+    background-color: #e2e2e2;
+    padding: 15px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.cast-member:hover {
+    transform: scale(1.05);
+    background-color: #d4d4d4;
+}
+
+.cast-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.cast-member h3 {
+    margin-top: 10px;
+    color: #800000;
+}
+
+.cast-member p {
+    font-style: italic;
+}
+
+/* Contact Form */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+
+#contact-form label {
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    padding: 10px;
+    border: none;
+    background-color: #800000;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #ffcc00;
+    color: #800000;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #800000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .cast-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cast-member {
+        width: 80%;
+    }
+}

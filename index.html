@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guys and Dolls - Playbill</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon (Optional) -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="assets/images/logo.png" alt="Theatre Department Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#cast">Cast & Crew</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#tickets">Tickets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview">
+            <div class="container">
+                <h1>Guys and Dolls</h1>
+                <p>Welcome to the official Playbill for Siena College Theatre's production of <em>Guys and Dolls</em>! Explore the production details, meet the cast and crew, and find all the information you need.</p>
+            </div>
+        </section>
+
+        <section id="cast">
+            <div class="container">
+                <h2>Cast & Crew</h2>
+                <div class="cast-container">
+                    <!-- Cast profiles will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule">
+            <div class="container">
+                <h2>Schedule</h2>
+                <!-- Schedule details will go here -->
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <h2>Gallery</h2>
+                <!-- Gallery images/videos will go here -->
+            </div>
+        </section>
+
+        <section id="tickets">
+            <div class="container">
+                <h2>Tickets</h2>
+                <p>Purchase your tickets <a href="https://tickets.sienacollege.edu" target="_blank">here</a>.</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <!-- Contact form or information -->
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Siena College Theatre Department. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
