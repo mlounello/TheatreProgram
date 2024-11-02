@@ -1,0 +1,39 @@
+backend:
+  name: git-gateway
+  branch: main # Ensure this matches your default branch
+
+media_folder: "assets/images/uploads" # Folder where uploaded images are stored
+public_folder: "/assets/images/uploads" # Public URL path to the images
+
+collections:
+  - name: "cast"
+    label: "Cast"
+    folder: "content/cast"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Actor", name: "actor", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image" }
+
+  - name: "creative"
+    label: "Creative Team"
+    folder: "content/creative"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "markdown" }
+
+  - name: "crew"
+    label: "Crew"
+    folder: "content/crew"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "markdown" }
